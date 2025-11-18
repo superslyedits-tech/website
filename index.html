@@ -1,67 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sly NoBody</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-              'fade-in': 'fadeIn 1s ease-out forwards',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            accent: '#38bdf8',
+                        }
+                    }
+                },
             },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-            },
-            colors: {
-              brand: {
-                dark: '#0f172a',
-                accent: '#38bdf8',
-              }
-            }
-          },
-        },
-      }
+        }
     </script>
     <style>
-      /* Custom scrollbar for a sleek look */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
-      }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        /* Animation Delays */
+        .animation-delay-100 { animation-delay: 100ms; }
+        .animation-delay-200 { animation-delay: 200ms; }
+        .animation-delay-300 { animation-delay: 300ms; }
+        .animation-delay-400 { animation-delay: 400ms; }
+        .animation-delay-500 { animation-delay: 500ms; }
+        .animation-delay-600 { animation-delay: 600ms; }
+        .animation-delay-700 { animation-delay: 700ms; }
+        .animation-delay-800 { animation-delay: 800ms; }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
 </head>
-  <body class="bg-slate-950 text-slate-200 antialiased selection:bg-cyan-500 selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+<body class="bg-slate-950 text-slate-200 antialiased selection:bg-cyan-500 selection:text-white overflow-x-hidden">
+
+    <!-- Background Gradient Mesh -->
+    <div class="fixed inset-0 z-0 opacity-20 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900 rounded-full blur-[128px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-900 rounded-full blur-[128px]"></div>
+    </div>
+
+    <main class="relative z-10 flex flex-col items-center w-full max-w-md mx-auto pb-12 px-4 min-h-screen">
+        
+        <!-- Header -->
+        <header class="flex flex-col items-center justify-center pt-12 pb-8 text-center animate-fade-in w-full">
+            <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-slate-600 shadow-2xl flex items-center justify-center overflow-hidden">
+                <span class="text-3xl font-bold text-slate-400">SN</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-3 tracking-tighter uppercase">
+                Sly NoBody
+            </h1>
+            
+            <div class="h-1 w-20 bg-cyan-500 rounded-full mb-4 opacity-80"></div>
+            
+            <p class="text-xs md:text-sm font-bold tracking-[0.2em] text-cyan-400 uppercase">
+                PRODUCER * LYRICIST * VOCALIST
+            </p>
+        </header>
+
+        <!-- Tips Section -->
+        <div class="w-full mb-8 animate-fade-in-up animation-delay-100 opacity-0" style="animation-fill-mode: forwards;">
+            <div class="bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700/50 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                <!-- Decorative blur -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                
+                <h3 class="text-center text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Support The Art</h3>
+                
+                <div class="flex flex-col gap-3">
+                    <!-- PayPal -->
+                    <a href="https://paypal.me/slydylan13" target="_blank" rel="noopener noreferrer"
+                       class="flex items-center justify-between px-4 py-3 bg-slate-800/80 hover:bg-slate-700 rounded-lg transition-colors border border-slate-700 group">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-[#00457C] rounded-full text-white flex items-center justify-center">
+                                <i data-lucide="credit-card" class="w-4 h-4"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-200">PayPal</span>
+                        </div>
+                        <span class="text-xs text-slate-500 group-hover:text-cyan-400 transition-colors">paypal.me/slydylan13</span>
+                    </a>
+
+                    <!-- CashApp -->
+                    <div class="flex items-center justify-between px-4 py-3 bg-slate-800/80 rounded-lg border border-slate-700">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-[#00D632] rounded-full text-white flex items-center justify-center">
+                                <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-200">Cash App</span>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 select-all">$slydylan1313</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="w-full flex flex-col gap-4">
+            <!-- Instagram (Top) -->
+            <a href="https://www.instagram.com/slydylan/" target="_blank" rel="noopener noreferrer"
+               class="group relative flex items-center justify-center w-full p-4 transition-all duration-300 ease-out border rounded-xl backdrop-blur-sm bg-slate-800/50 border-slate-700 hover:bg-slate-700/60 hover:border-slate-600 hover:shadow-lg animate-fade-in-up animation-delay-200 opacity-0"
+               style="animation-fill-mode: forwards;">
+                <span class="absolute left-4 text-slate-400 group-hover:text-white">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </span>
+                <span class="font-semibold tracking-wide text-slate-200">Instagram</span>
+                <span class="absolute right-4 text-slate-500 group-hover:text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </span>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@sly8445" target="_blank" rel="noopener noreferrer"
+               class="group relative flex items-center justify-center w-full p-4 transition-all duration-300 ease-out border rounded-xl backdrop-blur-sm bg-slate-800/50 border-slate-700 hover:bg-slate-700/60 hover:border-slate-600 hover:shadow-lg animate-fade-in-up animation-delay-300 opacity-0"
+               style="animation-fill-mode: forwards;">
+                <span class="absolute left-4 text-slate-400 group-hover:text-white">
+                    <i data-lucide="youtube" class="w-6 h-6"></i>
+                </span>
+                <span class="font-semibold tracking-wide text-slate-200">YouTube</span>
+                <span class="absolute right-4 text-slate-500 group-hover:text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </span>
+            </a>
+
+             <!-- Spotify -->
+            <a href="https://open.spotify.com/artist/0zPvzCwEwleb4AooHiL5dX" target="_blank" rel="noopener noreferrer"
+               class="group relative flex items-center justify-center w-full p-4 transition-all duration-300 ease-out border rounded-xl backdrop-blur-sm bg-slate-800/50 border-slate-700 hover:bg-slate-700/60 hover:border-slate-600 hover:shadow-lg animate-fade-in-up animation-delay-400 opacity-0"
+               style="animation-fill-mode: forwards;">
+                <span class="absolute left-4 text-slate-400 group-hover:text-white">
+                    <i data-lucide="headphones" class="w-6 h-6"></i>
+                </span>
+                <span class="font-semibold tracking-wide text-slate-200">Spotify</span>
+                <span class="absolute right-4 text-slate-500 group-hover:text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </span>
+            </a>
+
+             <!-- Apple Music -->
+            <a href="https://music.apple.com/us/artist/sly-nobody/1357999417" target="_blank" rel="noopener noreferrer"
+               class="group relative flex items-center justify-center w-full p-4 transition-all duration-300 ease-out border rounded-xl backdrop-blur-sm bg-slate-800/50 border-slate-700 hover:bg-slate-700/60 hover:border-slate-600 hover:shadow-lg animate-fade-in-up animation-delay-500 opacity-0"
+               style="animation-fill-mode: forwards;">
+                <span class="absolute left-4 text-slate-400 group-hover:text-white">
+                    <i data-lucide="music" class="w-6 h-6"></i>
+                </span>
+                <span class="font-semibold tracking-wide text-slate-200">Apple Music</span>
+                <span class="absolute right-4 text-slate-500 group-hover:text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </span>
+            </a>
+
+            <!-- Bandcamp -->
+            <a href="https://slyfi.bandcamp.com/" target="_blank" rel="noopener noreferrer"
+               class="group relative flex items-center justify-center w-full p-4 transition-all duration-300 ease-out border rounded-xl backdrop-blur-sm bg-slate-800/50 border-slate-700 hover:bg-slate-700/60 hover:border-slate-600 hover:shadow-lg animate-fade-in-up animation-delay-600 opacity-0"
+               style="animation-fill-mode: forwards;">
+                <span class="absolute left-4 text-slate-400 group-hover:text-white">
+                    <i data-lucide="disc" class="w-6 h-6"></i>
+                </span>
+                <span class="font-semibold tracking-wide text-slate-200">Bandcamp</span>
+                <span class="absolute right-4 text-slate-500 group-hover:text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </span>
+            </a>
+
+             <!-- Buy my Beat Tape (Bottom) -->
+             <a href="https://slyfi.bandcamp.com/album/journey" target="_blank" rel="noopener noreferrer"
+               class="group relative flex items-center justify-center w-full p-4 transition-all duration-300 ease-out border rounded-xl backdrop-blur-sm bg-cyan-900/40 border-cyan-500/50 hover:bg-cyan-800/50 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] animate-fade-in-up animation-delay-700 opacity-0"
+               style="animation-fill-mode: forwards;">
+                <span class="absolute left-4 text-cyan-400">
+                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                </span>
+                <span class="font-semibold tracking-wide text-cyan-100">Buy my Beat Tape</span>
+                <span class="absolute right-4 text-slate-500 group-hover:text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </span>
+            </a>
+        </div>
+
+        <!-- About Section -->
+        <section class="w-full mt-16 mb-12 animate-fade-in text-center opacity-0" style="animation-fill-mode: forwards; animation-delay: 800ms;">
+            <div class="h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent mb-12"></div>
+            
+            <h2 class="text-2xl font-bold text-slate-100 mb-6 tracking-tight">ABOUT ME</h2>
+            
+            <div class="prose prose-invert mx-auto max-w-prose">
+                <p class="text-slate-400 leading-relaxed text-lg mb-8">
+                    I'm a recording artist, producer & writer born in Sarasota, Florida. 
+                    I'm currently based in <span class="text-slate-200">San Francisco</span>.
+                </p>
+                
+                <div class="flex flex-col gap-4 text-sm text-slate-500 mb-8">
+                    <div class="flex items-center justify-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4 text-cyan-500"></i>
+                        <a href="mailto:slybusiness111@gmail.com" class="hover:text-cyan-400 transition-colors">slybusiness111@gmail.com</a>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-cyan-500"></i>
+                        <span>North Beach / Downtown SF</span>
+                    </div>
+                </div>
+
+                <p class="text-slate-500 italic text-sm">
+                    "Catch me sometime busking in North Beach, or downtown SF"
+                </p>
+            </div>
+            
+            <footer class="mt-16 text-xs text-slate-700 uppercase tracking-widest">
+                © 2024 Sly NoBody
+            </footer>
+        </section>
+
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
 </html>
